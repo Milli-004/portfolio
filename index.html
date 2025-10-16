@@ -5,142 +5,58 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Milli Srivastava | Portfolio</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet">
-  <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-      font-family: 'Poppins', sans-serif;
-      transition: all 0.3s ease;
-    }
-    body {
-      background-color: #d8e3d2; /* Darker matcha green background */
-      color: #2e3c2f;
-      line-height: 1.6;
-    }
-    header {
-      background: #88b04b;
-      color: #fff;
-      padding: 20px 0;
-      text-align: center;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    }
-    header h1 {
-      font-size: 2.5rem;
-    }
-    header p {
-      font-size: 1.2rem;
-    }
-    section {
-      max-width: 1000px;
-      margin: 40px auto;
-      padding: 0 20px;
-    }
-    h2 {
-      margin-bottom: 20px;
-      color: #88b04b;
-    }
-    .projects table {
-      width: 100%;
-      border-collapse: collapse;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
-    }
-    .projects th, .projects td {
-      border: 1px solid #c3d6c0;
-      padding: 12px;
-      text-align: left;
-    }
-    .projects th {
-      background-color: #88b04b;
-      color: white;
-    }
-    .projects td a {
-      color: #88b04b;
-      text-decoration: none;
-    }
-    .projects td a:hover {
-      text-shadow: 0 0 3px rgba(136, 176, 75, 0.8);
-    }
-    .skills ul {
-      list-style: none;
-      display: flex;
-      flex-wrap: wrap;
-    }
-    .skills li {
-      background: #88b04b;
-      color: white;
-      padding: 8px 15px;
-      margin: 5px;
-      border-radius: 20px;
-      box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.1);
-      transition: transform 0.2s, box-shadow 0.2s;
-    }
-    .skills li:hover {
-      transform: translateY(-3px);
-      box-shadow: 2px 6px 12px rgba(0, 0, 0, 0.2);
-    }
-    footer {
-      text-align: center;
-      padding: 20px;
-      background: #88b04b;
-      color: white;
-      margin-top: 40px;
-      box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.1);
-    }
-    a {
-      color: #88b04b;
-      text-decoration: none;
-    }
-    a:hover {
-      text-shadow: 0 0 4px rgba(136, 176, 75, 0.8);
-    }
-  </style>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <header>
     <h1>Milli Srivastava</h1>
-    <p>B.Tech CSE 2nd Year | Frontend Developer | Invertis University, Bareilly</p>
+    <p>B.Tech CSE 2nd Year | Frontend Developer | Invertis University</p>
+    <nav>
+      <a href="#about">About</a>
+      <a href="#projects">Projects</a>
+      <a href="#skills">Skills</a>
+      <a href="#contact">Contact</a>
+    </nav>
   </header>
 
-  <section class="about">
+  <section id="about" class="fade-in">
     <h2>About Me</h2>
-    <p>I am a Computer Science Engineering student with a passion for frontend development. I have experience building web projects and am skilled in Java, C, and Python. Currently, I'm also refining my Data Structures & Algorithms skills to strengthen my problem-solving ability.</p>
+    <p>
+      I am a Computer Science Engineering student with a passion for frontend development.
+      I build creative, responsive web projects and am skilled in Java, C, and Python.
+      I’m currently improving my Data Structures & Algorithms knowledge to become a stronger problem solver.
+    </p>
   </section>
 
-  <section class="projects">
+  <section id="projects" class="fade-in">
     <h2>Projects</h2>
-    <table>
-      <tr>
-        <th>Project</th>
-        <th>Description</th>
-        <th>Live Link</th>
-      </tr>
-      <tr>
-        <td>Guess Game</td>
-        <td>A number guessing game built with HTML/CSS/JS</td>
-        <td><a href="https://milli-004.github.io/Guess/" target="_blank">View</a></td>
-      </tr>
-      <tr>
-        <td>Sample Site</td>
-        <td>A basic static site layout</td>
-        <td><a href="https://milli-004.github.io/Sample/" target="_blank">View</a></td>
-      </tr>
-      <tr>
-        <td>Calculator</td>
-        <td>A simple calculator app using JS</td>
-        <td><a href="https://milli-004.github.io/Calculator/" target="_blank">View</a></td>
-      </tr>
-      <tr>
-        <td>To-Do List</td>
-        <td>A to-do list web app with task management</td>
-        <td><a href="https://milli-004.github.io/todolist/" target="_blank">View</a></td>
-      </tr>
-    </table>
+    <div class="project-grid">
+      <div class="card">
+        <h3>Guess Game</h3>
+        <p>A number guessing game built with HTML/CSS/JS</p>
+        <a href="https://milli-004.github.io/Guess/" target="_blank">View</a>
+      </div>
+      <div class="card">
+        <h3>Sample Site</h3>
+        <p>A basic static website layout using modern design</p>
+        <a href="https://milli-004.github.io/Sample/" target="_blank">View</a>
+      </div>
+      <div class="card">
+        <h3>Calculator</h3>
+        <p>A simple calculator app built with JS</p>
+        <a href="https://milli-004.github.io/Calculator/" target="_blank">View</a>
+      </div>
+      <div class="card">
+        <h3>To-Do List</h3>
+        <p>Task management web app with local storage</p>
+        <a href="https://milli-004.github.io/todolist/" target="_blank">View</a>
+      </div>
+    </div>
   </section>
 
-  <section class="skills">
+  <section id="skills" class="fade-in">
     <h2>Skills</h2>
-    <ul>
+    <ul class="skills-list">
       <li>HTML</li>
       <li>CSS</li>
       <li>JavaScript</li>
@@ -152,14 +68,16 @@
     </ul>
   </section>
 
-  <section class="contact">
+  <section id="contact" class="fade-in">
     <h2>Contact</h2>
-    <p>Email: millisrivastava73@gmail.com</p>
+    <p>Email: <a href="mailto:millisrivastava73@gmail.com">millisrivastava73@gmail.com</a></p>
     <p>GitHub: <a href="https://github.com/milli-004" target="_blank">github.com/milli-004</a></p>
   </section>
 
   <footer>
     <p>&copy; 2025 Milli Srivastava. All rights reserved.</p>
   </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>
