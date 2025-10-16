@@ -231,3 +231,68 @@ footer {
   opacity: 1;
   transform: translateY(0);
 }
+
+
+/* ---------- HAMBURGER MENU ---------- */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 25px;
+  height: 18px;
+  cursor: pointer;
+  z-index: 1100;
+}
+
+.hamburger span {
+  display: block;
+  height: 3px;
+  width: 100%;
+  background: #00e5ff;
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+/* Toggle animation */
+.hamburger.active span:nth-child(1) {
+  transform: rotate(45deg) translateY(7px);
+}
+
+.hamburger.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+  transform: rotate(-45deg) translateY(-7px);
+}
+
+/* ---------- MOBILE NAV STYLING ---------- */
+@media (max-width: 768px) {
+  nav.nav-links {
+    position: fixed;
+    top: 60px;
+    left: -100%;
+    width: 100%;
+    background: rgba(0,0,0,0.9);
+    flex-direction: column;
+    text-align: center;
+    transition: left 0.3s ease;
+    padding: 1.5rem 0;
+    backdrop-filter: blur(10px);
+  }
+
+  nav.nav-links.active {
+    left: 0;
+  }
+
+  nav.nav-links a {
+    display: block;
+    margin: 1rem 0;
+    font-size: 1.2rem;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+}
+
