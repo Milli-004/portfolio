@@ -1,3 +1,4 @@
+/* ---------- RESET ---------- */
 * {
   margin: 0;
   padding: 0;
@@ -13,17 +14,22 @@ body {
   overflow-x: hidden;
 }
 
-/* NAVBAR */
+/* ---------- NAVBAR ---------- */
 header {
   position: fixed;
   top: 0;
   width: 100%;
-  background: rgba(0, 0, 0, 0.7);
+  background: rgba(0,0,0,0.6);
   backdrop-filter: blur(10px);
   z-index: 1000;
-  padding: 0.5rem 2rem;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
-  animation: slideDown 1s ease;
+  padding: 0.4rem 2rem;
+  transition: padding 0.3s ease, background 0.3s ease;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.5);
+}
+
+header.shrink {
+  padding: 0.2rem 2rem;
+  background: rgba(0,0,0,0.8);
 }
 
 .nav-container {
@@ -43,7 +49,23 @@ nav a {
   margin: 0 10px;
   text-decoration: none;
   font-weight: 300;
-  transition: all 0.3s;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+nav a::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  left: 0;
+  bottom: -3px;
+  background: #00e5ff;
+  transition: width 0.3s;
+}
+
+nav a:hover::after {
+  width: 100%;
 }
 
 nav a:hover {
@@ -51,15 +73,13 @@ nav a:hover {
   text-shadow: 0 0 10px #00e5ff;
 }
 
-/* HERO SECTION */
+/* ---------- HERO ---------- */
 .hero {
   height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
   text-align: center;
-  background: linear-gradient(135deg, #1c1c1c, #222);
-  animation: fadeInUp 1.5s ease;
 }
 
 .hero-content h2 {
@@ -76,7 +96,8 @@ nav a:hover {
   color: #ccc;
 }
 
-.btn {
+/* ---------- BUTTON ---------- */
+.btn, .cert-btn {
   display: inline-block;
   margin-top: 1rem;
   padding: 0.6rem 1.2rem;
@@ -84,18 +105,20 @@ nav a:hover {
   color: #000;
   border-radius: 30px;
   text-decoration: none;
-  transition: 0.3s ease;
+  transition: all 0.3s ease;
 }
 
-.btn:hover {
+.btn:hover, .cert-btn:hover {
   background: #fff;
-  transform: scale(1.05);
+  color: #00e5ff;
+  box-shadow: 0 0 15px #00e5ff;
+  transform: scale(1.1);
 }
 
-/* SECTIONS */
+/* ---------- SECTIONS ---------- */
 section {
   padding: 6rem 2rem;
-  max-width: 1100px;
+  max-width: 1000px;
   margin: auto;
   text-align: center;
 }
@@ -117,7 +140,7 @@ h2::after {
   border-radius: 10px;
 }
 
-/* PROJECTS */
+/* ---------- PROJECTS ---------- */
 .project-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -133,10 +156,10 @@ h2::after {
 
 .card:hover {
   transform: translateY(-10px);
-  box-shadow: 0 10px 30px rgba(0, 229, 255, 0.3);
+  box-shadow: 0 10px 30px rgba(0,229,255,0.3);
 }
 
-/* SKILLS */
+/* ---------- SKILLS ---------- */
 .skills-list {
   display: flex;
   flex-wrap: wrap;
@@ -158,7 +181,7 @@ h2::after {
   transform: scale(1.05);
 }
 
-/* CERTIFICATIONS */
+/* ---------- CERTIFICATES ---------- */
 .certificate-card {
   background: rgba(255, 255, 255, 0.1);
   padding: 1.5rem;
@@ -170,25 +193,10 @@ h2::after {
 
 .certificate-card:hover {
   transform: scale(1.05);
-  box-shadow: 0 0 20px rgba(0, 229, 255, 0.4);
+  box-shadow: 0 0 20px rgba(0,229,255,0.4);
 }
 
-.cert-btn {
-  display: inline-block;
-  margin-top: 1rem;
-  background: #00e5ff;
-  color: #000;
-  padding: 0.6rem 1.2rem;
-  border-radius: 25px;
-  text-decoration: none;
-  transition: 0.3s ease;
-}
-
-.cert-btn:hover {
-  background: #fff;
-}
-
-/* CONTACT */
+/* ---------- CONTACT ---------- */
 .social-icons {
   margin-top: 1rem;
 }
@@ -197,7 +205,7 @@ h2::after {
   color: #00e5ff;
   font-size: 1.5rem;
   margin: 0 10px;
-  transition: 0.3s;
+  transition: all 0.3s ease;
 }
 
 .social-icons a:hover {
@@ -205,7 +213,7 @@ h2::after {
   transform: scale(1.2);
 }
 
-/* FOOTER */
+/* ---------- FOOTER ---------- */
 footer {
   background: rgba(0, 0, 0, 0.9);
   text-align: center;
@@ -213,35 +221,13 @@ footer {
   color: #bbb;
 }
 
-footer a {
-  color: #00e5ff;
-  text-decoration: none;
-}
-
-/* ANIMATIONS */
-@keyframes slideDown {
-  from {
-    transform: translateY(-100%);
-    opacity: 0;
-  }
-  to {
-    transform: translateY(0);
-    opacity: 1;
-  }
-}
-
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(40px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
+/* ---------- ANIMATIONS ---------- */
 .fade-in {
   opacity: 0;
-  animation: fadeInUp 1s ease forwards;
+  transform: translateY(40px);
+  transition: all 1s ease;
+}
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
 }
